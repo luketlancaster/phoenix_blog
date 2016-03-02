@@ -16,10 +16,17 @@ defmodule BlogPhoenix.Router do
   scope "/", BlogPhoenix do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    get "/", SessionController, :new
+    post "/login", SessionController, :create
+    get "/logout", SessionController, :delete
     resources "/posts", PostController do
       post "/comment", PostController, :add_comment
     end
+
+    get "/registration", RegistrationController, :new
+    post "/registration", RegistrationController, :create
+
+    get "/pages", PostController, :index
   end
 
 

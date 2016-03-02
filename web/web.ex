@@ -31,6 +31,7 @@ defmodule BlogPhoenix.Web do
       use Phoenix.Controller
 
       alias BlogPhoenix.Repo
+      alias BlogPhoenix.User
       import Ecto
       import Ecto.Query, only: [from: 1, from: 2]
 
